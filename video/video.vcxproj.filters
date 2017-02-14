@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="1. Dib">
+      <UniqueIdentifier>{7ffdeac6-03e1-4c19-88ed-8967116777b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0. Dialogue">
+      <UniqueIdentifier>{722839bb-4344-4fb7-93f3-3922c636bdfe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4. Optical flow">
+      <UniqueIdentifier>{e36afc1a-da10-43fa-a8cf-21355aaf693d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3. Processing">
+      <UniqueIdentifier>{b181e411-bd26-45f8-a73e-70d248f1e560}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2. Common">
+      <UniqueIdentifier>{a1b829b6-93fd-4d52-8570-456abba81b4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="5. Saliency map">
+      <UniqueIdentifier>{0369a24a-7287-4fae-9ee2-64dc36ed0512}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="video.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Avi.h">
+      <Filter>1. Dib</Filter>
+    </ClInclude>
+    <ClInclude Include="Dib.h">
+      <Filter>1. Dib</Filter>
+    </ClInclude>
+    <ClInclude Include="DibColor.h">
+      <Filter>1. Dib</Filter>
+    </ClInclude>
+    <ClInclude Include="RGBBYTE.h">
+      <Filter>1. Dib</Filter>
+    </ClInclude>
+    <ClInclude Include="videoDlg.h">
+      <Filter>0. Dialogue</Filter>
+    </ClInclude>
+    <ClInclude Include="Processing.h">
+      <Filter>3. Processing</Filter>
+    </ClInclude>
+    <ClInclude Include="common.h">
+      <Filter>2. Common</Filter>
+    </ClInclude>
+    <ClInclude Include="OpticalFlow.h">
+      <Filter>4. Optical flow</Filter>
+    </ClInclude>
+    <ClInclude Include="DibCv.h">
+      <Filter>1. Dib</Filter>
+    </ClInclude>
+    <ClInclude Include="SaliencyMap.h">
+      <Filter>5. Saliency map</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="video.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Avi.cpp">
+      <Filter>1. Dib</Filter>
+    </ClCompile>
+    <ClCompile Include="Dib.cpp">
+      <Filter>1. Dib</Filter>
+    </ClCompile>
+    <ClCompile Include="DibBmp.cpp">
+      <Filter>1. Dib</Filter>
+    </ClCompile>
+    <ClCompile Include="DibColor.cpp">
+      <Filter>1. Dib</Filter>
+    </ClCompile>
+    <ClCompile Include="RGBBYTE.cpp">
+      <Filter>1. Dib</Filter>
+    </ClCompile>
+    <ClCompile Include="videoDlg.cpp">
+      <Filter>0. Dialogue</Filter>
+    </ClCompile>
+    <ClCompile Include="Processing.cpp">
+      <Filter>3. Processing</Filter>
+    </ClCompile>
+    <ClCompile Include="common.cpp">
+      <Filter>2. Common</Filter>
+    </ClCompile>
+    <ClCompile Include="OpticalFlow.cpp">
+      <Filter>4. Optical flow</Filter>
+    </ClCompile>
+    <ClCompile Include="DibCv.cpp">
+      <Filter>1. Dib</Filter>
+    </ClCompile>
+    <ClCompile Include="SaliencyMap.cpp">
+      <Filter>5. Saliency map</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="video.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\video.rc2">
+      <Filter>리소스 파일</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\video.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
