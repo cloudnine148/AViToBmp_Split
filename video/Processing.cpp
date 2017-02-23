@@ -39,18 +39,12 @@ void CProcessing::main(CDib &dib, int nCurrentFrame)
 
 	// 2. saliency map과 original img 더하기
 	//Saliency map on/off
-	//getSumImg(cpyDib, saliencyMapDib, dib);
+	getSumImg(cpyDib, saliencyMapDib, dib);
 
 	// 3. 결과 영상 저장
 
 
 }
-
-
-
-
-
-
 
 /// protected
 void CProcessing::getOpticalFlow(CDib &dib, sROI& roi, int nCurrentFrame)
@@ -107,8 +101,8 @@ void CProcessing::getSaliencyMap(CDib &dib)
 	GetDibFromIplImage(img, dib);
 
 	// saliency map 균등화
-//	saliencyMap = cvCreateImage(cvSize(img->width, img->height), IPL_DEPTH_8U, 1);
-//	m_saliencyMap.getSaliencyMap(img, saliencyMap);
+	//saliencyMap = cvCreateImage(cvSize(img->width, img->height), IPL_DEPTH_8U, 1);
+	//m_saliencyMap.getSaliencyMap(img, saliencyMap);
 
 	if (img != NULL)
 		cvReleaseImage(&img);
@@ -153,16 +147,16 @@ void CProcessing::getCandidateMap()
 		cvReleaseImage(&saliencyMap);
 }
 
-void CProcessing::getSumImg(CDib& dib1, CDib& dib2, CDib& dib3)
+void CProcessing::getSumImg(CDib& originalImg, CDib& targetImg, CDib& finalImg)
 {
 	register int i, j;
 
-	int w = dib1.GetWidth();
-	int h = dib1.GetHeight();
+	int w = originalImg.GetWidth();
+	int h = originalImg.GetHeight();
 
-	BYTE** ptr1 = dib1.GetPtr();
-	BYTE** ptr2 = dib2.GetPtr();
-	RGBBYTE** ptr3 = dib3.GetRGBPtr();
+	BYTE** ptr1 = originalImg.GetPtr();
+	BYTE** ptr2 = targetImg.GetPtr();
+	RGBBYTE** ptr3 = finalImg.GetRGBPtr();
 
 	for (i = 0; i < h; i++)
 	{

@@ -18,27 +18,30 @@ CSaliencyMap::~CSaliencyMap()
 void CSaliencyMap::mainProcessing(IplImage* currImg)
 {
 	IplImage* gaussianImg = NULL;
-	IplImage* contrastImg = NULL;
-	
+	IplImage* contrastImg_1 = NULL;
+	IplImage* contrastImg_2 = NULL;
 	// 1. Gaussian filter 利侩
 	gaussianImg = cvCreateImage(cvSize(currImg->width, currImg->height), IPL_DEPTH_8U, 1);
 	cvSmooth(currImg, gaussianImg, CV_GAUSSIAN, 5);
 
 	// 2. Contrast map 积己
-	contrastImg = cvCreateImage(cvSize(currImg->width, currImg->height), IPL_DEPTH_8U, 1);
-	getContrastMap(gaussianImg, contrastImg, 5, 1);
+	contrastImg_1 = cvCreateImage(cvSize(currImg->width, currImg->height), IPL_DEPTH_8U, 1);
+	getContrastMap(gaussianImg, contrastImg_1, 5, 1);
+	// 3. 2nd Contrast map 积己	
+	contrastImg_2 = cvCreateImage(cvSize(currImg->width, currImg->height), IPL_DEPTH_8U, 1);
+	getContrastMap(contrastImg_1, contrastImg_2, 6, 1);
 
-	// 3. Saliency map 免仿
+	// 4. Saliency map 免仿
 	cvNamedWindow("Saliency Map", CV_WINDOW_AUTOSIZE);
-	cvShowImage("Saliency Map", contrastImg);
+	cvShowImage("Saliency Map", contrastImg_2);
 
-	cvCopy(contrastImg, m_saliencyMap);
+	cvCopy(contrastImg_2, m_saliencyMap);
 	cvCopy(m_saliencyMap, currImg);
 
 	if (gaussianImg != NULL)
 		cvReleaseImage(&gaussianImg);
-	if (contrastImg != NULL)
-		cvReleaseImage(&contrastImg);
+	if (contrastImg_2 != NULL)
+		cvReleaseImage(&contrastImg_2);
 
 	return;
 }
